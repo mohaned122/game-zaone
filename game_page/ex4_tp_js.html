@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4 tp js</title>
+</head>
+<body>
+    <h1>La Suit de  Syracuse</h1>
+    <form action="">
+        <label for="number">Entrez un nombre entier positif:</label>
+        <input type="number" id="number" name="number" min="1"><br><br>
+        <label for="nextNumber">Nombre suivant dans la suite:</label>
+        <input type="number" id="nextNumber" name="NextNumber"><br><br>
+        <input type="button" onclick="generateSyracuseSequence()" value="Générer la suite">
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function generateSyracuseSequence() {
+            let number = parseInt(document.getElementById("number").value);
+            let nextNumber = document.getElementById("nextNumber");
+            let resultField = document.getElementById("result");
+
+            if (isNaN(number) || number < 1) {
+                alert("Veuillez entrer un nombre entier positif.");
+                return;
+            }
+
+            if (number % 2 === 0) {
+                    nextNumber.value = number / 2;
+                } else {
+                    nextNumber.value = 3 * number + 1;
+                }
+
+            let sequence = [number];
+
+            while (number !== 1) {
+                if (number % 2 === 0) {
+                    number = number / 2;
+                } else {
+                    number = 3 * number + 1;
+                }
+                sequence.push(number);
+            }
+
+            resultField.innerHTML = "La suite de Syracuse est: " + sequence.join(" → ");
+        }
+    </script>
+</body>
+</html>

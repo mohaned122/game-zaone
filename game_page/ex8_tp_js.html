@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8 tp js</title>
+</head>
+<body>
+    <h1>La code de cesar</h1>
+    <form action="">
+        <label for="text">saisir votre text: </label>
+        <input type="text" id="t1" name="t1">
+        <input type="button" value="encode0" onclick="cesar_code()">
+        <p id="result"></p>
+    </form>
+    <script>
+        function cesar_code(){
+            let inputText = document.getElementById("t1").value;;
+            let outputText = "";
+            console.log("hello " + inputText)
+
+            for(let i = 0; i < inputText.length; i++){
+                let char = inputText[i];
+                if(char >= 'a' && char <= 'z'){
+                    let code = ((char.charCodeAt(0) - 97 + 3) % 26) + 97;
+                    outputText += String.fromCharCode(code);
+                } else if(char >= 'A' && char <= 'Z'){
+                    let code = ((char.charCodeAt(0) - 65 + 3) % 26) + 65;
+                    outputText += String.fromCharCode(code);
+                } else {
+                    outputText += char;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Encoded text: " + outputText;
+        }
+    </script>
+</body>
+</html>

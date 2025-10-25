@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5 tp js</title>
+</head>
+<body>
+    <h1>Plindrom ou non</h1>
+    <form action="">
+        <label for="word">Entrez un mot:</label>
+        <input type="text" id="word" name="word"><br><br>
+        <input type="button" onclick="checkPalindrome()" value="Vérifier">
+        <p id="result"></p>
+    </form>
+    <script>
+        function checkPalindrome() {
+            let word = document.getElementById("word").value;
+            let resultField = document.getElementById("result");
+
+            if (word === "") {
+                alert("Veuillez entrer un mot.");
+                return;
+            }
+
+            let reversedWord = word.split('').reverse().join('');
+
+            if (word.toLowerCase() === reversedWord.toLowerCase()) {
+                resultField.innerHTML = "\"" + word + "\" est un palindrome.";
+            } else {
+                resultField.innerHTML = "\"" + word + "\" n'est pas un palindrome.";
+            }
+        }
+    </script>
+</body>
+</html>

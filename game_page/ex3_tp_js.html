@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3 tp js</title>
+</head>
+<body>
+    <h1>nombre mystérieux</h1>
+    <form action="">
+        <label for="guess">Devinez le nombre (entre 1 et 100):</label><br>
+        <input type="number" id="guess" name="guess"><br><br>
+        <input type="text" id="info" name="info"><br><br>
+        <label for="tentative"></label>
+        <input type="number" id="tentative" name="tentative" readonly><br><br>
+        <input type="hidden" id="mysteryNumber" value="">
+        <input type="button" onclick="checkGuess()" value="Vérifier">
+    </form>
+    <script>
+        let tentative = 10;
+        
+        function generateMysteryNumber() {
+            return Math.floor(Math.random() * 100);
+        }
+
+        
+        document.getElementById("mysteryNumber").value = generateMysteryNumber();
+
+        function checkGuess() {
+            let guess = parseInt(document.getElementById("guess").value);
+            let mysteryNumber = parseInt(document.getElementById("mysteryNumber").value);
+            let infoField = document.getElementById("info");
+
+            if(tentative <= 0) {
+                infoField.value = "Jeu terminé! Le nombre était " + mysteryNumber + ".";
+                return;
+            }else {
+                tentative--;
+                document.getElementById("tentative").value = tentative;
+            }
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                alert("Veuillez entrer un nombre valide entre 1 et 100.");
+                return;
+            }
+
+            if (guess < mysteryNumber) {
+                infoField.value = "Trop bas!";
+                document.getElementById("tentative").value = tentative;
+            } else if (guess > mysteryNumber) {
+                infoField.value = "Trop haut!";
+                document.getElementById("tentative").value = tentative;
+            } else {
+                infoField.value = "Félicitations! Vous avez deviné le nombre!";
+                document.getElementById("mysteryNumber").value = generateMysteryNumber();
+                document.getElementById("tentative").value = tentative;
+            }
+        }
+    </script>
+</body>
+</html>

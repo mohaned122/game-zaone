@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7 tp js</title>
+</head>
+<body>
+    <h1>tableau des Notes éleves</h1>
+    <table id="Notes">
+
+    </table>
+    <script>
+        NomEleves = new Array ("Nizar", "Mohamed", "Ahmed", "Walid", "Foued", "Lamia", "Asma","Nadia");
+        Notes =new Array([10,12,18,5,9,13,16,19],[13,11,14,7,14,16,12,10],[9,14,14,12,8,20,13,13]);
+       
+        function  Afficher(TabNom, TabNotes){
+
+            document.getElementById("Notes").innerHTML += "<tr><th>Eleves</th><th>Math</th><th>Physique</th><th>Anglais</th><th>Moyenne</th></tr>";
+        
+            for (let i=0; i<TabNom.length; i++){
+                let sum =0;
+                for (let j=0; j<TabNotes.length; j++){
+                    sum += Notes [j][i];
+                }
+                let moy = (sum/Notes.length).toFixed(2);
+                document.getElementById("Notes").innerHTML += "<tr><td>"+NomEleves[i]+"</td><td>"+Notes[0][i]+"</td><td>"+Notes[1][i]+"</td><td>"+Notes[2][i]+"</td><td>"+moy+"</td></tr>";
+            }
+        }
+
+        function NoteMin(TabNotes){
+            let min = TabNotes[0][0];
+            for (let i=0; i<TabNotes.length; i++){
+                for (let j=0; j<TabNotes[i].length; j++){
+                    if (TabNotes[i][j]<min){
+                        min = TabNotes[i][j];
+                    }
+                }
+            }
+            return min;
+        }
+
+        function NoteMax(TabNotes){
+            let max = TabNotes[0][0];
+            for (let i=0; i<TabNotes.length; i++){
+                for (let j=0; j<TabNotes[i].length; j++){
+                    if (TabNotes[i][j]>max){
+                        max = TabNotes[i][j];
+                    }
+                }
+            }
+            return max;
+        }
+
+        Afficher(NomEleves, Notes);
+        document.write("La note minimale est: "+NoteMin(Notes)+"<br>");
+        document.write("La note maximale est: "+NoteMax(Notes)+"<br>");
+        console.log("La note minimale est: "+NoteMin(Notes));
+        console.log("La note maximale est: "+NoteMax(Notes));
+    </script>
+</body>
+</html>

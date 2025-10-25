@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | GameZone</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: radial-gradient(circle at top, #111, #000);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(20, 20, 20, 0.9);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0ff;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            color: #0ff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #0ff;
+            text-shadow: 0 0 8px #0ff;
+        }
+
+        .about {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(10,10,10,0.95));
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            color: #0ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #0ff;
+        }
+
+        .about p {
+            max-width: 700px;
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #0ff;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px #0ff;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            border-top: 2px solid #0ff;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .about h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GameZone</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="">Game</a></li>
+                <li><a href="./about_me.html" style="color:#0ff;">À propos</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about">
+        <img src="https://avatars.githubusercontent.com/u/12345678?v=4" alt="Photo de Mohanned Zayoud">
+        <h2>À propos de moi</h2>
+        <p>Je m'appelle <strong>Mohanned Zayoud</strong>, j’ai 23 ans et je suis étudiant en <strong>génie logiciel</strong>. Passionné par le monde du code, des jeux vidéo et de la technologie, je cherche toujours à repousser mes limites et à apprendre de nouvelles choses.</p>
+        <p>Je suis le créateur de <strong>GameZone</strong>, un espace dédié à tous ceux qui veulent plonger dans un univers d’action, de défis et de créativité. Mon objectif est de combiner mes compétences en développement logiciel et ma passion pour le gaming afin de construire des expériences interactives uniques.</p>
+        <p>Je rêve également de lancer ma propre <strong>startup</strong> et de partager mes connaissances à travers mes <strong>chaînes YouTube</strong> consacrées à la programmation, à Linux et à l’histoire.</p>
+        <p>En dehors du code, j’aime faire du sport, voyager et découvrir de nouvelles cultures. Chaque jour est une mission, et le jeu continue.</p>
+    </section>
+
+    <footer>
+        © 2025 GameZone — Créé par Mohanned Zayoud. Tous droits réservés.
+    </footer>
+</body>
+</html>

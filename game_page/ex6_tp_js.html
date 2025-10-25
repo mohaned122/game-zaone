@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6 tp js</title>
+</head>
+<body>
+    <h1> Tableau de n nombres entiers aléatoires</h1>
+    <form action="">
+        <label for="num">saisir number aléatoire: </label>
+        <input type="number" id="num" name="num">
+        <input type="button" value="generate tab" onclick="random_tab()">
+    </form>
+    <p id="result"></p>
+    <h4 id="somme"></h4>
+    <h4 id="moy"></h4>
+    <h4 id="max"></h4>
+    <h4 id="min"></h4>
+    <script>
+        
+        function random_tab(){
+            let nb = document.getElementById("num").value;
+            Number = parseInt(nb);
+            listN = [];
+            sum = 0;
+
+            if(isNaN(Number)){
+                alert("this is not a number please repeat again....");
+                return;           
+            }
+
+            for(let i = 0; i< nb ; i++){
+                n = Math.floor(Math.random()*100);
+                listN.push(n);
+                sum += n;
+            }
+
+            document.getElementById("result").innerHTML = "your table is "+ listN.join("->");
+            document.getElementById("somme").innerHTML = "the sum is "+ sum;
+            document.getElementById("moy").innerHTML = "the average is "+ (sum / listN.length);
+            document.getElementById("max").innerHTML = "the max is "+ Math.max(...listN);
+            document.getElementById("min").innerHTML = "the min is "+ Math.min(...listN);
+
+        }
+    </script>
+</body>
+</html>

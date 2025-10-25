@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux | GameZone</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: radial-gradient(circle at top, #111, #000);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(20, 20, 20, 0.9);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0ff;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            color: #0ff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #0ff;
+            text-shadow: 0 0 8px #0ff;
+        }
+
+        /* Games Section */
+        .games {
+            flex: 1;
+            padding: 80px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #0ff;
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .game-card h3 {
+            margin: 15px 0;
+            color: #0ff;
+        }
+
+        .game-card p {
+            padding: 0 15px;
+            font-size: 0.95em;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .game-card a {
+            display: inline-block;
+            background: #0ff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .game-card a:hover {
+            background: #fff;
+            box-shadow: 0 0 15px #0ff;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            border-top: 2px solid #0ff;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GameZone</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                 <li><a href="#">Game</a></li>
+                <li><a href="./other/about_me.html">À propos</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="games">
+        <div class="game-card">
+            <img src="../assets/lotto.jpeg" alt="Game 1">
+            <h3>find max</h3>
+            <p>ex1 tp2</p>
+            <a href="../game_page/ex1_tp_js.html">Jouer</a>
+        </div>
+
+        <div class="game-card">
+            <img src="../assets/Fahrenheit & Celsius.png" alt="Game 2">
+            <h3>Température</h3>
+            <p>ex2 tp2</p>
+            <a href="../game_page/ex2_tp_js.html">Jouer</a>
+        </div>
+
+        <div class="game-card">
+            <img src="../assets/number.png" alt="Game 3">
+            <h3> nombre mystérieux</h3>
+            <p>ex3 tp2</p>
+            <a href="../game_page/ex3_tp_js.html">Jouer</a>
+        </div>
+
+        <div class="game-card">
+            <img src="../assets/Syracuse.jpeg" alt="Game 4">
+            <h3>La Suit de  Syracuse</h3>
+            <p>ex4 tp2</p>
+            <a href="../game_page/ex4_tp_js.html">Jouer</a>
+        </div>
+        <div class="game-card">
+            <img src="../assets/palindrom.jpeg" alt="Game 5">
+            <h3>palindrome</h3>
+            <p>ex5 tp2</p>
+            <a href="../game_page/ex5_tp_js.html">Jouer</a>
+        </div>
+
+        <div class="game-card">
+            <img src="../assets/random.png" alt="Game 6">
+            <h3>random number</h3>
+            <p>ex6 tp2</p>
+            <a href="../game_page/ex6_tp_js.html">Jouer</a>
+        </div>
+
+        <div class="game-card">
+            <img src="../assets/student.jpeg" alt="Game 7">
+            <h3>student</h3>
+            <p>ex7 tp2</p>
+            <a href="../game_page/ex7_tp_js.html">Jouer</a>
+        </div>
+
+        <div class="game-card">
+            <img src="../assets/cesar.jpeg" alt="Game 2">
+            <h3>cesar code</h3>
+            <p>ex2 tp2</p>
+            <a href="../game_page/ex8_tp_js.html">Jouer</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 GameZone — Tous droits réservés.
+    </footer>
+</body>
+</html>
